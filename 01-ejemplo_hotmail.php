@@ -31,7 +31,7 @@ try {
     $mail->SMTPAuth = true;
     $mail->Port = 587;
     $mail->Username = 'amozoa@hotmail.com';
-    $mail->Password = 'Area@2021';
+    $mail->Password = '*********';
     
 
     //Recipients
