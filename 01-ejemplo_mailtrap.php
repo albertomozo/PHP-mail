@@ -30,7 +30,7 @@ try {
     $mail->SMTPAuth = true;
     $mail->Port = 2525;
     $mail->Username = '35a820774859fc';
-    $mail->Password = '75f0f03c6a6840';
+    $mail->Password = '**************';
 
     //Recipients
     $mail->setFrom('from@example.com', 'Mailer');

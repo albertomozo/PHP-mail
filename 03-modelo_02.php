@@ -1,26 +1,20 @@
 <?php
-include 'inc/config_01.php';
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
+include 'inc/config_02.php';
 //Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+   
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+    $mail->SMTPDebug =   $mailerDebug ;              //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'albertomozodesarrollador@gmail.com';                     //SMTP username
-    $mail->Password   = '*************';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Username   = $mailerUser;                     //SMTP username
+    $mail->Password   = $mailerPassword;                               //SMTP password
+    $mail->SMTPSecure = $mailerSMTPSecure;
+    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
